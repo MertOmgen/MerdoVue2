@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+    <!-- 
+        Burada yarattığımız "app" idsine sahip div bizim aslında Vue templatemiz olmakta. "app" ise bizim Vue instance atadığımız değişkenin adı.
+        Bu değişkeni js ile DOM da mount() methodu ile ayağa kaldırıp daha sonra html tarafında çağırıp template olarak kullanıyoruz.
+     -->
+<div id="app">
+    <!-- 
+        Vue instance içerisinde tanımladığımız propertyleri ön tarafta göstermek için 
+        çift curly bracket içerisine property ismini gireriz.
+     -->
+     <div>
+{{title}} - {{Age}}
+     </div>
+ 
+   
+ 
+</div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<style>
+    .fav{
+        background-color: burlywood;
+    }
+</style>
+<body>
+    
+<div id="app">
+<!-- 
+    Attribute binding işlem ile html attributelarımızın değerlerini dinamik bir şekilde değiştirebiliyoruz.
+    Attribute binding => v-bind:href ya da :href şeklinde tanımlayabiliriz.
+
+    Dynamic Classes => Dinamik sınıflar ilgili html tagine verdiğimiz class attribute dinamik olarak değişmesine olanak sağlar.
+    Key Value Pairs şeklinde çalışır.
+
+    Computed Properties => Birbirine bağımlı verilerin tanımlandığı fonksiyonlardır.
+
+    İki Nokta (:) => Bir template içerisinde başına ":" koyduğumuz propertyler bir data propertysine dönüşür ve istediğimiz herşeyi
+    bu property ile tanımlayabiliriz. Örneğin :data="asdsad" string iken, :data=["asd",234] bir dizi olarak tanımlanır.
+ -->
+
+ <ul style="list-style-type: square;">
+     <li v-for="book in filteredBooks" style="padding-bottom: 15px;" @click="changeFav(book)" :class="{fav : book.isFav}" >
+          <a :href="book.link" rel="noopener"> {{book.title}} - {{book.author}} </a>
+     </li>
+ </ul>
+
+</div>
+
+    <script src="app.js"></script>
+</body>
+</html>

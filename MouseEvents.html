@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        .box{
+           padding: 20px 0;
+           width: 200px;
+           text-align: center;
+           background-color: bisque;
+           margin: 10px;
+           display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+<!-- 
+        v-on ile @ aynı anlama gelmekte her ikisinden sonra da kullanmak istediğimiz ilgili event ismini
+        belirtip fonksiyonun atamasını yapabiliriz.
+     -->
+
+    <div>
+        {{title}} - {{Age}}
+    </div>
+
+    <br>
+    <br>
+
+<div>
+    <button v-on:click="Age++">Increase</button>
+    <button @click="Age--">Decrease</button><br><br>
+    <button @click="title='Sefkan'">Change Title</button>
+    <button @click="changeTitle('Mert')">Change Title</button><br>
+</div>
+
+<div class="box" @mouseover="eventFire($event,13)">mouseover</div>
+<div class="box" @mouseleave="eventFire">mouseleave</div>
+<div class="box" @dblclick="eventFire">double click</div>
+<div class="box" @mousemove="eventMouseMove">position - {{x}} : {{y}}</div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

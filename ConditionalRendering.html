@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+    <!-- 
+            v-if => Bildiğimiz şekliyle dönen değerin true veya false olmasına göre çalışan bir propertydir. v-if genellikle; login inputları,
+            navbar vb. componentleri gizlemek veya göstermek için kullanıyoruz.
+    
+            v-show => Bu property ise v-if gibi çalışan ve dönen değerin true veya false olmasına göre bize ilgili componentin gözükmesini veya
+            gizlenmesini sağlar
+    
+            Aralarındaki fark ise, ilgili component v-if ile gizlendiğinde DOM'dan silinir. v-show da ise component display css propertysi
+            ile gelir ve true olduğunda "style" false olduğunda ise style="display:none" değerini alır.
+    
+            Kullamım alanları => DOM üzerinden bir componentin silinip eklenmesi bize çok fazla performans kaybı yaşatacağından dolayı, eğer
+            bir componenti çok sık html tarafında gizleyip göstereceksek bu componentlerde 'v-show' propertysini kullanmalıyız. Örn: Dropdown, navbar vb.
+            Eğer bir componenti tüm kullanım süresince çok nadir şekilde gizleyip göstereceksek 'v-if' tagini kullanabiliriz. Örn: Login inputları vb.
+         -->
+    
+    <div v-if="showName">
+        <p>{{title}}</p>
+    </div>
+    
+    <button @click="showNameFunction">
+    
+        <span v-if="showName">Hide Name</span>
+        <span v-else>Show Name</span>
+    
+        <!-- <span v-if="!showName">Show Name</span> -->
+    </button>
+    
+    
+    <div v-show='showName'>Show the name of : {{title}}</div>
+
+    </div>
+    
+
+<script src="app.js"></script>
+</body>
+</html>
